@@ -12,6 +12,15 @@
         android:theme="@style/Theme.BMI_Calculator"
         tools:targetApi="31">
         <activity
+            android:name=".AboutDeveloper"
+            android:exported="false" />
+        <activity
+            android:name=".AboutBMI"
+            android:exported="false" />
+        <activity
+            android:name=".BmiChart"
+            android:exported="false" />
+        <activity
             android:name=".SecondMainActivity"
             android:exported="false" />
         <activity

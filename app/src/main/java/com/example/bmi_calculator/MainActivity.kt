@@ -8,9 +8,14 @@ import android.view.MenuItem
 import android.widget.Toast
 import com.example.bmi_calculator.databinding.ActivityMainBinding
 import kotlin.math.pow
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,9 +50,27 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item:MenuItem): Boolean {
         when (item.itemId){
-            R.id.item_01 -> Toast.makeText(this,"About Selected",Toast.LENGTH_SHORT).show()
-            R.id.item_02 -> Toast.makeText(this,"Settings Selected",Toast.LENGTH_SHORT).show()
-            R.id.item_03-> Toast.makeText(this,"Exit Selected",Toast.LENGTH_SHORT).show()
+            R.id.item_01 ->
+            {
+                var intent = Intent(this,AboutBMI::class.java)
+                startActivity(intent)
+            }
+            R.id.item_02 ->
+            {
+                var intent = Intent(this, BmiChart::class.java)
+                startActivity(intent)
+
+            }
+
+            R.id.item_03 ->
+            {
+                var intent = Intent(this,AboutDeveloper::class.java)
+                startActivity(intent)
+            }
+            R.id.item_04-> {
+                finish()
+                exitProcess(0)
+            }
         }
         return super.onOptionsItemSelected(item)
     }

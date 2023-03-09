@@ -1,11 +1,13 @@
 package com.example.bmi_calculator
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import com.example.bmi_calculator.databinding.ActivitySecondMainBinding
+import kotlin.system.exitProcess
 
 class SecondMainActivity : AppCompatActivity() {
     private lateinit var binding:ActivitySecondMainBinding
@@ -39,9 +41,27 @@ class SecondMainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item:MenuItem): Boolean {
         when (item.itemId){
-            R.id.item_01 -> Toast.makeText(this,"About Selected", Toast.LENGTH_SHORT).show()
-            R.id.item_02 -> Toast.makeText(this,"Settings Selected", Toast.LENGTH_SHORT).show()
-            R.id.item_03-> Toast.makeText(this,"Exit Selected", Toast.LENGTH_SHORT).show()
+            R.id.item_01 ->
+            {
+                var intent = Intent(this,AboutBMI::class.java)
+                startActivity(intent)
+            }
+            R.id.item_02 ->
+            {
+                var intent = Intent(this, BmiChart::class.java)
+                startActivity(intent)
+
+            }
+
+            R.id.item_03 ->
+            {
+                var intent = Intent(this,AboutDeveloper::class.java)
+                startActivity(intent)
+            }
+            R.id.item_04-> {
+                finish()
+                exitProcess(0)
+            }
         }
         return super.onOptionsItemSelected(item)
     }
