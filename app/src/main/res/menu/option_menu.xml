@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/item_01"
+        android:title="About API">
+
+    </item>
+
+    <item android:id="@+id/item_02"
+        android:title="Setting">
+
+    </item>
+
+    <item android:id="@+id/item_03"
+        android:title="Exit">
+
+    </item>
+
+
+
+</menu>
