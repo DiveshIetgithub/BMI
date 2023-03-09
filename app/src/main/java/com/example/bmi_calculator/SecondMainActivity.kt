@@ -12,6 +12,9 @@ import kotlin.system.exitProcess
 class SecondMainActivity : AppCompatActivity() {
     private lateinit var binding:ActivitySecondMainBinding
 
+
+    override fun onBackPressed() =Unit
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySecondMainBinding.inflate(layoutInflater)
@@ -19,7 +22,9 @@ class SecondMainActivity : AppCompatActivity() {
 
         val bmi = intent.getFloatExtra("bmi", 0f)
 
-        binding.bmiTextView.text =bmi.toString()
+        binding.bmiTextView.setText(String.format("%.2f",bmi))
+
+       // binding.bmiTextView.text =bmi.toString()
 
         val bmiCategory = getBMICategory(bmi)
         binding.categoryTextView.text = bmiCategory
@@ -53,12 +58,7 @@ class SecondMainActivity : AppCompatActivity() {
 
             }
 
-            R.id.item_03 ->
-            {
-                var intent = Intent(this,AboutDeveloper::class.java)
-                startActivity(intent)
-            }
-            R.id.item_04-> {
+            R.id.item_03-> {
                 finish()
                 exitProcess(0)
             }

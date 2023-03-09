@@ -13,9 +13,7 @@ import kotlin.system.exitProcess
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-    }
+    override fun onBackPressed() =Unit
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         val bmi = weight / (height/100).pow(2)
 
         val intent = Intent(this, SecondMainActivity::class.java)
-        intent.putExtra( "bmi",bmi)
+        intent.putExtra( "bmi", bmi)
         startActivity(intent)
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -61,13 +59,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
 
             }
-
-            R.id.item_03 ->
-            {
-                var intent = Intent(this,AboutDeveloper::class.java)
-                startActivity(intent)
-            }
-            R.id.item_04-> {
+            R.id.item_03-> {
                 finish()
                 exitProcess(0)
             }

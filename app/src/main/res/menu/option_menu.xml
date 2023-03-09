@@ -10,12 +10,8 @@
 
     </item>
 
+
     <item android:id="@+id/item_03"
-        android:title="About Developer">
-
-    </item>
-
-    <item android:id="@+id/item_04"
         android:title="Exit">
 
     </item>
