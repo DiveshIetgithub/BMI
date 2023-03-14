@@ -30,7 +30,22 @@ class MainActivity : AppCompatActivity() {
         val weight = binding.weight.editText!!.text.toString().toFloatOrNull()
         val height = binding.height.editText!!.text.toString().toFloatOrNull()
 
-        if (weight == null || height == null) {
+        if(weight==null && height!=null)
+        {
+            Toast.makeText(this,"please enter weight",Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        else if(height==null &&
+            weight!=null)
+
+        {
+            Toast.makeText(this,"please enter height",Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (weight == null || height == null)
+         {
             Toast.makeText(this, "Please enter weight and height", Toast.LENGTH_SHORT).show()
             return
         }
@@ -59,7 +74,14 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
 
             }
-            R.id.item_03-> {
+
+            R.id.item_03 ->
+            {
+                var intent = Intent(this, Contact_Us::class.java)
+                startActivity(intent)
+
+            }
+            R.id.item_04-> {
                 finish()
                 exitProcess(0)
             }

@@ -2,42 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    tools:context=".SecondMainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Contact_Us"
     android:orientation="vertical">
 
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact_Us"
+        android:id="@+id/Contact_Us"/>
 
-
-    <TextView
-        android:id="@+id/bmiLabel"
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/btn_Action_View"
         android:layout_gravity="center"
-        android:text="Your BMI is:"/>
+        android:text="View"/>
 
-    <TextView
-        android:id="@+id/bmiTextView"
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/btn_Action_Dial"
         android:layout_gravity="center"
-        android:textSize="24sp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/categoryLabel"
+        android:text="Dial"/>
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/btn_Action_Call"
         android:layout_gravity="center"
-        android:text="Your BMI category is:"/>
+        android:text="Call"/>
 
-    <TextView
-        android:id="@+id/categoryTextView"
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/btn_Action_Email"
         android:layout_gravity="center"
-        android:textSize="24sp"
-        android:textStyle="bold"/>
+        android:text="Email"/>
+
 
 </LinearLayout>

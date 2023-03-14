@@ -10,8 +10,15 @@
 
     </item>
 
+    <item
+        android:id="@+id/item_03"
+        android:title="Contact Us" >
 
-    <item android:id="@+id/item_03"
+    </item>
+
+
+
+    <item android:id="@+id/item_04"
         android:title="Exit">
 
     </item>
