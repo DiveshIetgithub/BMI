@@ -1,10 +1,14 @@
 package com.example.bmi_calculator
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.example.bmi_calculator.databinding.ActivityContactUsBinding
 
 class Contact_Us : AppCompatActivity(), View.OnClickListener {
@@ -36,9 +40,18 @@ class Contact_Us : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btn_Action_Call->
             {
-                val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:7518841932"))
-                startActivity(intent)
+                if(ContextCompat.checkSelfPermission(this,android.Manifest.permission.CALL_PHONE)==PackageManager.PERMISSION_GRANTED)
+                {
+                    val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:7355942912"))
+                    startActivity(intent)
+                }
+                else
+                {
+                    ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.CALL_PHONE),1001)
+                }
+
             }
+
             R.id.btn_Action_Email->
             {
                 val intent =Intent(Intent.ACTION_SENDTO,Uri.parse("mailto:kdivesh556@gmail.com"))
@@ -48,4 +61,26 @@ class Contact_Us : AppCompatActivity(), View.OnClickListener {
         }
 
     }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray)
+    {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        if (requestCode==7518)
+        {
+            if (grantResults.isNotEmpty() && permissions[0].equals(PackageManager.PERMISSION_GRANTED))
+            {
+
+            }
+            else
+            {
+                Toast.makeText(this, "please give permission", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    }
+
 }

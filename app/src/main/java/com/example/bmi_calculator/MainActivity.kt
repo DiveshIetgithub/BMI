@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.bmi_calculator.databinding.ActivityMainBinding
 import kotlin.math.pow
 import kotlin.system.exitProcess
@@ -13,7 +14,10 @@ import kotlin.system.exitProcess
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
 
-    override fun onBackPressed() =Unit
+    override fun onBackPressed() {
+       val builder = AlertDialog.Builder(this)
+        builder.setTitle(R.string.app_name)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,8 +40,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        else if(height==null &&
-            weight!=null)
+        else if(height==null && weight!=null)
 
         {
             Toast.makeText(this,"please enter height",Toast.LENGTH_SHORT).show()
@@ -79,6 +82,7 @@ class MainActivity : AppCompatActivity() {
             {
                 var intent = Intent(this, Contact_Us::class.java)
                 startActivity(intent)
+                return true
 
             }
             R.id.item_04-> {

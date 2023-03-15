@@ -22,8 +22,7 @@ class AboutBMI : AppCompatActivity(), View.OnClickListener {
         when (view!!.id) {
             R.id.About_BMI -> {
                 val intent=Intent(
-                    Intent.ACTION_SEARCH,
-                    Uri.parse("https://www.cdc.gov/healthyweight/assessing/bmi/index.html#:~:text=Body%20Mass%20Index%20(BMI)%20is,or%20health%20of%20an%20individual.")
+                    Intent.ACTION_SEARCH,Uri.parse("https://www.news-medical.net/health/What-is-Body-Mass-Index-(BMI).aspx")
                 )
                 startActivity(intent)
             }
